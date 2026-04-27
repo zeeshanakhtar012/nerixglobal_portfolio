@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Mail, MessageSquare, ArrowRight } from "lucide-react";
+import { contactInfo } from "@/data/portfolio";
 
 const ContactSection = () => {
   return (
@@ -27,8 +28,8 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="text-lg font-bold text-white mb-1">Email Us</h4>
-                  <p className="text-slate-400">hello@softmatdev.com</p>
-                  <a href="mailto:hello@softmatdev.com" className="text-indigo-400 text-sm font-semibold mt-2 inline-block hover:underline">
+                  <p className="text-slate-400">{contactInfo.email}</p>
+                  <a href={`mailto:${contactInfo.email}`} className="text-indigo-400 text-sm font-semibold mt-2 inline-block hover:underline">
                     Send an email →
                   </a>
                 </div>
@@ -40,8 +41,8 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="text-lg font-bold text-white mb-1">WhatsApp</h4>
-                  <p className="text-slate-400">+1 (555) 123-4567</p>
-                  <a href="#" className="text-emerald-400 text-sm font-semibold mt-2 inline-block hover:underline">
+                  <p className="text-slate-400">{contactInfo.phone}</p>
+                  <a href={contactInfo.whatsapp} target="_blank" rel="noopener noreferrer" className="text-emerald-400 text-sm font-semibold mt-2 inline-block hover:underline">
                     Chat with us →
                   </a>
                 </div>

@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { contactInfo } from "@/data/portfolio";
+import { Code2, MessageCircle, Users } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -17,6 +19,17 @@ const Footer = () => {
             <p className="text-slate-400 max-w-sm mb-6 leading-relaxed">
               Building scalable, high-performance mobile and web solutions for forward-thinking companies worldwide.
             </p>
+            <div className="flex items-center gap-4">
+              <a href={contactInfo.socials.github} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full glass flex items-center justify-center text-slate-400 hover:text-white hover:bg-indigo-600 transition-all">
+                <Code2 className="w-4 h-4" />
+              </a>
+              <a href={contactInfo.socials.linkedin} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full glass flex items-center justify-center text-slate-400 hover:text-white hover:bg-indigo-600 transition-all">
+                <Users className="w-4 h-4" />
+              </a>
+              <a href={contactInfo.socials.twitter} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full glass flex items-center justify-center text-slate-400 hover:text-white hover:bg-indigo-600 transition-all">
+                <MessageCircle className="w-4 h-4" />
+              </a>
+            </div>
           </div>
           
           <div>
@@ -33,15 +46,21 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-white font-bold mb-4">Company</h4>
+            <h4 className="text-white font-bold mb-4">Contact</h4>
             <ul className="space-y-2">
-              {["About Us", "Our Work", "Careers", "Contact"].map(item => (
-                <li key={item}>
-                  <Link href={`#${item.toLowerCase().replace(" ", "")}`} className="text-slate-400 hover:text-indigo-400 transition-colors text-sm">
-                    {item}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <a href={`mailto:${contactInfo.email}`} className="text-slate-400 hover:text-indigo-400 transition-colors text-sm">
+                  Email Us
+                </a>
+              </li>
+              <li>
+                <a href={contactInfo.whatsapp} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-indigo-400 transition-colors text-sm">
+                  WhatsApp
+                </a>
+              </li>
+              <li className="text-slate-400 text-sm mt-4">
+                {contactInfo.address}
+              </li>
             </ul>
           </div>
         </div>

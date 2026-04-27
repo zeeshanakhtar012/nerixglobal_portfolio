@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import { projects } from "@/data/portfolio";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Code2 } from "lucide-react";
+import Link from "next/link";
 
 const PortfolioSection = () => {
   const featuredProject = projects.find(p => p.id === "restaurant-saas");
@@ -52,10 +53,6 @@ const PortfolioSection = () => {
                     <h4 className="text-sm font-bold text-indigo-400 uppercase tracking-wider mb-2">The Solution</h4>
                     <p className="text-slate-300">{featuredProject.stats?.solution}</p>
                   </div>
-                  <div className="glass p-6 rounded-2xl">
-                    <h4 className="text-sm font-bold text-emerald-400 uppercase tracking-wider mb-2">Impact</h4>
-                    <p className="text-slate-300">{featuredProject.stats?.results}</p>
-                  </div>
                 </div>
 
                 <div className="flex flex-wrap gap-2 pt-4">
@@ -65,13 +62,34 @@ const PortfolioSection = () => {
                     </span>
                   ))}
                 </div>
+
+                <div className="flex items-center gap-4 pt-6">
+                  <Link 
+                    href={`/projects/${featuredProject.id}`}
+                    className="bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2"
+                  >
+                    View Case Study
+                    <ArrowUpRight className="w-4 h-4" />
+                  </Link>
+                  {featuredProject.githubUrl && (
+                    <a 
+                      href={featuredProject.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="glass hover:bg-white/10 text-white px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 border border-white/10"
+                    >
+                      <Code2 className="w-4 h-4" />
+                      View Code
+                    </a>
+                  )}
+                </div>
               </div>
 
               {/* Ecosystem Visualization */}
               <div className="relative flex items-center justify-center min-h-[400px]">
                 <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/10 to-transparent rounded-3xl border border-white/5" />
                 <div className="grid gap-6 w-full max-w-sm relative z-10 p-6">
-                   {featuredProject.apps?.map((app, idx) => (
+                   {featuredProject.apps?.map((app) => (
                      <div key={app.name} className="glass-card p-6 rounded-2xl transform transition-transform hover:scale-105 hover:border-indigo-500/50">
                        <h4 className="text-lg font-bold text-white mb-2">{app.name}</h4>
                        <ul className="space-y-1">
@@ -103,7 +121,14 @@ const PortfolioSection = () => {
             >
                <div className="aspect-video w-full rounded-2xl glass mb-6 relative overflow-hidden flex items-center justify-center">
                   <span className="text-slate-500 font-medium">Image Placeholder</span>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-4">
+                    <Link 
+                      href={`/projects/${project.id}`}
+                      className="text-white font-semibold text-sm hover:text-indigo-400 transition-colors"
+                    >
+                      View Details →
+                    </Link>
+                  </div>
                </div>
                
                <div className="flex-1">
@@ -122,9 +147,25 @@ const PortfolioSection = () => {
                  <div className="flex gap-2 text-xs text-slate-500">
                     {project.tags.slice(0, 2).map(tag => <span key={tag}>{tag}</span>)}
                  </div>
-                 <button className="w-8 h-8 rounded-full glass flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition-colors">
-                   <ArrowUpRight className="w-4 h-4" />
-                 </button>
+                 <div className="flex gap-2">
+                   {project.githubUrl && (
+                     <a 
+                       href={project.githubUrl}
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       className="w-8 h-8 rounded-full glass flex items-center justify-center hover:bg-slate-800 text-white transition-colors border border-white/5"
+                       title="View Code"
+                     >
+                       <Code2 className="w-4 h-4" />
+                     </a>
+                   )}
+                   <Link 
+                     href={`/projects/${project.id}`}
+                     className="w-8 h-8 rounded-full glass flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition-colors"
+                   >
+                     <ArrowUpRight className="w-4 h-4" />
+                   </Link>
+                 </div>
                </div>
             </motion.div>
           ))}
