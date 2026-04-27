@@ -100,17 +100,52 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
               </section>
             )}
 
-            {/* Screenshots Grid Placeholders */}
-            <section>
-              <h2 className="text-2xl font-bold text-white mb-6 border-b border-white/10 pb-2">Application Screenshots</h2>
-              <div className="grid grid-cols-2 gap-4">
-                {project.screenshots?.map((screenshot, idx) => (
-                  <div key={idx} className={`bg-white/5 rounded-2xl border border-white/10 flex items-center justify-center text-slate-500 ${idx === 0 ? 'col-span-2 aspect-[16/9]' : 'aspect-square'}`}>
-                    Screenshot {idx + 1}
+            {/* Media Section */}
+            {(project.images?.length > 0 || project.videos?.length > 0) && (
+              <section className="space-y-10">
+                {project.videos && project.videos.length > 0 && (
+                  <div>
+                    <h2 className="text-2xl font-bold text-white mb-6 border-b border-white/10 pb-2 flex items-center gap-2">
+                      Video Demonstrations
+                    </h2>
+                    <div className="flex flex-col gap-6">
+                      {project.videos.map((video, idx) => (
+                        <div key={idx} className="bg-white/5 rounded-2xl border border-white/10 overflow-hidden shadow-lg aspect-video">
+                          <video 
+                            src={video}
+                            controls
+                            preload="none"
+                            className="w-full h-full object-cover"
+                          >
+                            Your browser does not support the video tag.
+                          </video>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                ))}
-              </div>
-            </section>
+                )}
+
+                {project.images && project.images.length > 0 && (
+                  <div>
+                    <h2 className="text-2xl font-bold text-white mb-6 border-b border-white/10 pb-2 flex items-center gap-2">
+                      Application Screenshots
+                    </h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {project.images.map((image, idx) => (
+                        <div key={idx} className={`bg-white/5 rounded-2xl border border-white/10 overflow-hidden shadow-lg relative group ${idx === 0 && project.images.length % 2 !== 0 ? 'sm:col-span-2 aspect-[16/9]' : 'aspect-square sm:aspect-auto sm:h-64'}`}>
+                          <img 
+                            src={image} 
+                            alt={`${project.title} screenshot ${idx + 1}`}
+                            loading="lazy"
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </section>
+            )}
           </div>
 
           {/* Sidebar */}

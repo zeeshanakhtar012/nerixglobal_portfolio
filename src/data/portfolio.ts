@@ -1,9 +1,9 @@
-import { 
-  Smartphone, 
-  Globe, 
-  Server, 
-  Layout, 
-  MessageSquare, 
+import {
+  Smartphone,
+  Globe,
+  Server,
+  Layout,
+  MessageSquare,
   Layers
 } from "lucide-react";
 
@@ -60,7 +60,8 @@ export const projects = [
     description: "A complete 3-app ecosystem for administrators, restaurant owners, and customers.",
     overview: "We built a scalable restaurant management platform designed to streamline operations from kitchen to customer. This ecosystem consists of three interconnected applications, handling real-time order processing, secure payments, and comprehensive admin analytics.",
     image: "/projects/restaurant-hero.jpg",
-    screenshots: ["/projects/restaurant-1.jpg", "/projects/restaurant-2.jpg", "/projects/restaurant-3.jpg"],
+    images: ["/projects/restaurant-1.jpg", "/projects/restaurant-2.jpg", "/projects/restaurant-3.jpg"],
+    videos: ["https://www.w3schools.com/html/mov_bbb.mp4"], // Example video
     githubUrl: "https://github.com/zeeshanakhtar012/restaurant-saas-demo",
     tags: ["Flutter", "Firebase", "Node.js", "SaaS"],
     keyFeatures: [
@@ -87,7 +88,8 @@ export const projects = [
     description: "Real-time messaging with high-quality audio and video calling integration.",
     overview: "A seamless communication app built to provide low-latency voice and video calls globally. We utilized WebRTC and ZegoCloud for robust real-time communication, wrapped in a beautiful Flutter UI.",
     image: "/projects/chat-app.jpg",
-    screenshots: ["/projects/chat-1.jpg", "/projects/chat-2.jpg"],
+    images: ["/projects/chat-1.jpg", "/projects/chat-2.jpg"],
+    videos: [],
     githubUrl: "https://github.com/zeeshanakhtar012/connect-live",
     tags: ["Flutter", "Firebase", "ZegoCloud"],
     keyFeatures: [
@@ -109,7 +111,8 @@ export const projects = [
     description: "Computer vision system for monitoring driver alertness and safety.",
     overview: "An AI-powered computer vision project that monitors a driver's face in real-time to detect signs of drowsiness and distraction, triggering immediate alerts to prevent accidents.",
     image: "/projects/ai-drowsiness.jpg",
-    screenshots: ["/projects/ai-1.jpg", "/projects/ai-2.jpg"],
+    images: ["/projects/ai-1.jpg", "/projects/ai-2.jpg"],
+    videos: [],
     githubUrl: "https://github.com/zeeshanakhtar012/driver-drowsiness-ai",
     tags: ["Python", "OpenCV", "TensorFlow"],
     keyFeatures: [
@@ -131,7 +134,8 @@ export const projects = [
     description: "End-to-end cargo booking and tracking system for international shipping.",
     overview: "A comprehensive logistics platform that digitizes the entire cargo shipping workflow, from booking to final delivery, complete with live tracking and automated waybill generation.",
     image: "/projects/cargo.jpg",
-    screenshots: ["/projects/cargo-1.jpg", "/projects/cargo-2.jpg"],
+    images: ["/projects/cargo-1.jpg", "/projects/cargo-2.jpg"],
+    videos: [],
     githubUrl: "https://github.com/zeeshanakhtar012/logiship",
     tags: ["React", "Go", "PostgreSQL"],
     keyFeatures: [
