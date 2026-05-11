@@ -188,9 +188,9 @@ export const technologies = [
 ];
 
 export const contactInfo = {
-  email: "hello@softmatdev.com",
-  phone: "+1 (555) 123-4567",
-  whatsapp: "https://wa.me/15551234567",
+  email: "asad@nerixglobal.com",
+  phone: "+923074839575",
+  whatsapp: "https://www.facebook.com/nerixglobal",
   address: "123 Innovation Drive, Tech City, TC 90210",
   socials: {
     github: "https://github.com/zeeshanakhtar012",

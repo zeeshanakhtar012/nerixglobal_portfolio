@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
+import logoImg from "@/assets/images/nerixglobal.jpeg";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -18,11 +19,10 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: "Services", href: "#services" },
-    { name: "Work", href: "#portfolio" },
-    { name: "About", href: "#about" },
-    { name: "Contact", href: "#contact" },
-  ];
+  { name: "Services", href: "#services" },
+  { name: "About", href: "#about" },
+  { name: "Contact", href: "#contact" },
+];
 
   return (
     <nav
@@ -33,11 +33,11 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
-          <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center shadow-lg shadow-indigo-500/20">
-            <span className="text-white font-bold text-xl">S</span>
+          <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center overflow-hidden">
+            <img src={logoImg.src} alt="Nerixglobal Logo" className="w-full h-full object-contain" />
           </div>
           <span className="text-white font-bold text-xl tracking-tight">
-            SoftMat<span className="text-indigo-400">Dev</span>
+            Nerixglobal
           </span>
         </Link>
 

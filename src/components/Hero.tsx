@@ -3,15 +3,15 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Play } from "lucide-react";
+import heroBg from "@/assets/images/nerixglobal.jpeg";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden" style={{ backgroundImage: `url(${heroBg.src})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-[#020617]/85 backdrop-blur-[2px]" />
       {/* Background elements */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-600/20 rounded-full blur-[128px] animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-[128px] animate-pulse delay-1000" />
-      </div>
+
 
       <div className="container mx-auto px-6 relative z-10 text-center">
         <motion.div
@@ -27,16 +27,16 @@ const Hero = () => {
             SaaS Platforms That Drive <span className="gradient-text">Growth</span>
           </h1>
           <p className="text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-            From high-performance mobile apps to complex SaaS ecosystems, we deliver 
+            From high-performance mobile apps to complex SaaS ecosystems, we deliver
             software that transforms businesses and reaches millions of users.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              href="#portfolio"
+              href="#services"
               className="group bg-indigo-600 hover:bg-indigo-500 text-white px-8 py-4 rounded-full font-bold transition-all hover:scale-105 flex items-center gap-2 shadow-xl shadow-indigo-500/30"
             >
-              View Our Work
+              Our Services
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
@@ -73,17 +73,17 @@ const Hero = () => {
               </div>
             </div>
           </div>
-          
+
           {/* Decorative floating elements */}
           <div className="absolute -top-6 -right-6 w-24 h-24 glass rounded-2xl rotate-12 flex items-center justify-center shadow-xl">
-             <div className="w-12 h-12 bg-indigo-500 rounded-lg animate-bounce" />
+            <div className="w-12 h-12 bg-indigo-500 rounded-lg animate-bounce" />
           </div>
           <div className="absolute -bottom-10 -left-10 w-40 h-40 glass rounded-2xl -rotate-6 shadow-2xl p-4">
-             <div className="space-y-3">
-               <div className="w-full h-3 bg-white/20 rounded-full" />
-               <div className="w-3/4 h-3 bg-white/10 rounded-full" />
-               <div className="w-1/2 h-3 bg-indigo-500/40 rounded-full" />
-             </div>
+            <div className="space-y-3">
+              <div className="w-full h-3 bg-white/20 rounded-full" />
+              <div className="w-3/4 h-3 bg-white/10 rounded-full" />
+              <div className="w-1/2 h-3 bg-indigo-500/40 rounded-full" />
+            </div>
           </div>
         </motion.div>
       </div>

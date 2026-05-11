@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { contactInfo } from "@/data/portfolio";
 import { Code2, MessageCircle, Users } from "lucide-react";
+import logoImg from "@/assets/images/nerixglobal.jpeg";
 
 const Footer = () => {
   return (
@@ -9,11 +10,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-1 md:col-span-2">
             <Link href="/" className="flex items-center space-x-2 mb-6">
-              <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">S</span>
+              <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center overflow-hidden">
+                <img src={logoImg.src} alt="Nerixglobal Logo" className="w-full h-full object-contain" />
               </div>
               <span className="text-white font-bold text-xl tracking-tight">
-                SoftMat<span className="text-indigo-400">Dev</span>
+                Nerix<span className="text-indigo-400">global</span>
               </span>
             </Link>
             <p className="text-slate-400 max-w-sm mb-6 leading-relaxed">
@@ -67,7 +68,7 @@ const Footer = () => {
         
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-slate-500 text-sm">
-            © {new Date().getFullYear()} SoftMat Dev. All rights reserved.
+            © {new Date().getFullYear()} Nerixglobal. All rights reserved.
           </p>
           <div className="flex space-x-4 text-sm text-slate-500">
             <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
