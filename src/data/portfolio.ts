@@ -191,10 +191,10 @@ export const contactInfo = {
   email: "asad@nerixglobal.com",
   phone: "+923074839575",
   whatsapp: "https://www.facebook.com/nerixglobal",
-  address: "123 Innovation Drive, Tech City, TC 90210",
+  address: "13th Floor Al Hafeez Executive, Firdus Market Gulberg 3 Lahore ",
   socials: {
     github: "https://github.com/zeeshanakhtar012",
-    linkedin: "https://linkedin.com/company/softmatdev",
-    twitter: "https://twitter.com/softmatdev"
+    linkedin: "https://linkedin.com/company/nerixglobal",
+    twitter: "https://twitter.com/nerixglobal"
   }
 };
